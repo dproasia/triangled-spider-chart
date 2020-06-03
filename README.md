@@ -1,5 +1,6 @@
 # Vue.js Triangled Spider Chart
 A Vue.js component that displays a triangled style spider chart.
+
 ![Full options with 1 fill color](./resources/full_options_1.png)
 
 ## Simple setup

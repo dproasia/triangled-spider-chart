@@ -9,8 +9,15 @@
   "keywords": [
     "spider",
     "chart",
-    "triangle"
+    "triangle",
+    "vue-chart",
+    "spider-chart",
+    "triangled-chart"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dproasia/triangled-spider-chart"
+  },
   "license": "MIT",
   "main": "./dist/triangled-spider-chart.common.js",
   "scripts": {

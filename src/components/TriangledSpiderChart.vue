@@ -10,7 +10,6 @@
         :width="size"
         :height="size"
       >
-        <!-- +250 +250 -->
         <polygon
           v-for="index in itemCount"
           :key="index"
@@ -31,7 +30,6 @@
 </template>
 
 <script>
-// import { EventBus } from '../../../event-bus';
 export default {
   name: 'triangled-spider-chart',
   props: {
@@ -50,6 +48,10 @@ export default {
     options: {
       type: Object,
       default: null
+    },
+    selectedIndex: {
+      type: Number,
+      default: -1
     }
   },
   data () {
@@ -146,12 +148,10 @@ export default {
       return 'fill:' + fill + ';stroke:' + strokeColor + ';stroke-width:' + strokeWidth + ';opacity:' + alpha;
     },
     onMouseOver (index) {
-      index;
-      // EventBus.$emit('onItemMouseOver', index);
+      this.$emit('onItemMouseOver', index);
     },
     onMouseOut (index) {
-      index;
-      // EventBus.$emit('mouseOverOnDomainFinacial');
+      this.$emit('onItemMouseOut', index);
     },
     onItemClick (index) {
       if (this.selected === index) {
@@ -159,7 +159,7 @@ export default {
       } else {
         this.setSelected(index);
       }
-      // EventBus.$emit('onItemClick', index);
+      this.$emit('onItemClick', index);
     },
     setSelected (index) {
       this.selected = index;
@@ -175,54 +175,7 @@ export default {
     }
   },
   mounted () {
-    // EventBus.$on('mouseOverOnIndexDomain', (domainType) => {
-    //   switch (domainType) {
-    //     case 'HAPPINESS_AND_LIFE_SATISFACTION':
-    //       this.hoverings = 0;
-    //       break;
-    //     case 'CHARACTER_AND_VIRTUNE':
-    //       this.hoverings = 1;
-    //       break;
-    //     case 'MENTAL_AND_PHYSICAL_HEALTH':
-    //       this.hoverings = 2;
-    //       break;
-    //     case 'CLOSE_SOCIAL_RELATIONSHIPS':
-    //       this.hoverings = 3;
-    //       break;
-    //     case 'FINANCIAL_AND_MATERIAL_STABILITY':
-    //       this.hoverings = 4;
-    //       break;
-    //     case 'MEANING_AND_PURPOSE':
-    //       this.hoverings = 5;
-    //       break;
-    //   }
-    // });
-    // EventBus.$on('mouseOutOnIndexDomain', () => {
-    //   this.hoverings = -1;
-    // });
-    // // handle click on domain
-    // EventBus.$on('on-click-domain', (domainType) => {
-    //   switch (domainType) {
-    //     case 'HAPPINESS_AND_LIFE_SATISFACTION':
-    //       this.selected = 0;
-    //       break;
-    //     case 'CHARACTER_AND_VIRTUNE':
-    //       this.selected = 1;
-    //       break;
-    //     case 'MENTAL_AND_PHYSICAL_HEALTH':
-    //       this.selected = 2;
-    //       break;
-    //     case 'CLOSE_SOCIAL_RELATIONSHIPS':
-    //       this.selected = 3;
-    //       break;
-    //     case 'FINANCIAL_AND_MATERIAL_STABILITY':
-    //       this.selected = 4;
-    //       break;
-    //     case 'MEANING_AND_PURPOSE':
-    //       this.selected = 5;
-    //       break;
-    //   }
-    // });
+    this.selected = this.selectedIndex;
   }
 };
 </script>

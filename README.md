@@ -37,6 +37,7 @@ In the template
 - **size**: *Number* Dimension (for both width and height) of the chart. Default is 300.
 - **max**: *Number* Maximum value to display within the chart. Maximum value of **chartData** if omitted.
 - **chartData**: *Array|required* Chart series data. Ex: [5, 10, 15, 20, 25, 30, 35]
+- **selectedIndex**: *Number* Default selected (highlighted) item index.
 - **options** *Object* Custom styling for the chart.
 
 ##### The options definition
@@ -44,6 +45,11 @@ In the template
 - **strokeColor**: *Number* Color fo the chart serie stroke. Default is White.
 - **fills** *String|Array* Fill colors of chart series. Ramdomize colors if omitted.
 - **hoverFills** *String|Array* Fill colors of chart series when mouse over. Opacity to 75% if omitted.
+
+### Events
+- **onItemMouseOver(index)**: Event emitted when move mouse over an item.
+- **onItemMouseOut(index)**: Evet emitted when move mouse out of an item.
+- **onItemClick(index)**: Event emitted when click on an item.
 
 ## Full options example
 In the script

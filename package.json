@@ -1,6 +1,6 @@
 {
   "name": "triangled-spider-chart",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A Vue.js component that display a triangled style spider chart.",
   "author": {
     "name": "DPro Asia",
@@ -22,9 +22,12 @@
   "main": "./dist/triangled-spider-chart.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name triangled-spider-chart src/main.js",
+    "build": "vue-cli-service build --target lib --name triangled-spider-chart ./index.js",
     "lint": "vue-cli-service lint"
   },
+  "files": [
+    "dist/*.*"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"

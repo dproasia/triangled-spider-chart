@@ -1,6 +1,6 @@
 {
   "name": "triangled-spider-chart",
-  "version": "0.1.4",
+  "version": "0.1.4a",
   "description": "A Vue.js component that display a triangled style spider chart.",
   "author": {
     "name": "DPro Asia",
